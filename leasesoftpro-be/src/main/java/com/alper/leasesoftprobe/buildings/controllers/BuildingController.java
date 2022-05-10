@@ -1,8 +1,10 @@
 package com.alper.leasesoftprobe.buildings.controllers;
 
 import com.alper.leasesoftprobe.buildings.entities.BuildingAdress;
+import com.alper.leasesoftprobe.buildings.entities.Floor;
 import com.alper.leasesoftprobe.buildings.entities.LeasProBuilding;
 import com.alper.leasesoftprobe.buildings.services.BuildingAdressService;
+import com.alper.leasesoftprobe.buildings.services.FloorService;
 import com.alper.leasesoftprobe.buildings.services.LeasProBuildingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +24,9 @@ public class BuildingController {
 
     @Autowired
     public BuildingAdressService adressService;
+
+    @Autowired
+    public FloorService floorService;
 
     @GetMapping("/adress")
     public ResponseEntity <List<BuildingAdress>> getAdress(@RequestParam(name = "id") Optional<Integer> id){
@@ -58,5 +63,19 @@ public class BuildingController {
     public ResponseEntity<BuildingAdress> addAdress(@RequestBody BuildingAdress adress) throws Exception{
         BuildingAdress saved = adressService.save(adress);
         return ResponseEntity.ok(saved);
+    }
+
+    @PostMapping("/{buildingid}/floors")
+    public ResponseEntity<Floor> saveFloor( @PathVariable(name = "buildingid") Integer buildingId, @RequestBody Floor floor){
+        try {
+            Floor savedFloor = floorService.saveFloor(buildingId,floor);
+            if(savedFloor!=null){
+                return  ResponseEntity.ok(savedFloor);
+            }
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
