@@ -1,5 +1,6 @@
 package com.alper.leasesoftprobe.buildings.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 public class BuildingAdress {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Integer id;
 
     @Column(name = "street")

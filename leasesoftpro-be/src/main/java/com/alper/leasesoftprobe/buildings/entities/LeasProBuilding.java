@@ -5,6 +5,7 @@ import org.hibernate.annotations.LazyToOne;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "lesapro_buildings")
@@ -29,4 +30,7 @@ public class LeasProBuilding {
     @OneToOne
     @JoinColumn(name = "adress_id")
     BuildingAdress adress;
+
+    @OneToMany(mappedBy = "buildingId", targetEntity = Floor.class)
+    List<Floor> floors;
 }
