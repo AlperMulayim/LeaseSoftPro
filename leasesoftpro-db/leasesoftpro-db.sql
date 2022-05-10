@@ -20,7 +20,7 @@ CREATE TABLE lesapro_building_adress(
 
 CREATE TABLE lesapro_buildings(
     id INT NOT NULL AUTO_INCREMENT,
-    buiding_name VARCHAR(100) NOT NULL,
+    building_name VARCHAR(100) NOT NULL,
     standart_price_permonth DOUBLE,
     fee_permonth DOUBLE,
     init_date DATE,
@@ -50,7 +50,7 @@ INSERT INTO lesapro_building_adress(
 );
 
 INSERT INTO lesapro_buildings (
-    buiding_name,
+    building_name,
     adress_id,
     fee_permonth,
     standart_price_permonth,
