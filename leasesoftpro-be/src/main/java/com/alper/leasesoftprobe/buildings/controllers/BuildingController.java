@@ -4,6 +4,7 @@ import com.alper.leasesoftprobe.buildings.entities.BuildingAdress;
 import com.alper.leasesoftprobe.buildings.entities.BuildingUnit;
 import com.alper.leasesoftprobe.buildings.entities.Floor;
 import com.alper.leasesoftprobe.buildings.entities.LeasProBuilding;
+import com.alper.leasesoftprobe.buildings.enums.UnitTypes;
 import com.alper.leasesoftprobe.buildings.services.BuildingAdressService;
 import com.alper.leasesoftprobe.buildings.services.BuildingUnitsService;
 import com.alper.leasesoftprobe.buildings.services.FloorService;
@@ -83,7 +84,20 @@ public class BuildingController {
     }
 
     @GetMapping("/{buildingId}/units")
-    public ResponseEntity<List<BuildingUnit>> getUnits(){
-        return  ResponseEntity.ok(unitsService.getUnits());
+    public ResponseEntity<List<BuildingUnit>> getUnits(
+            @RequestParam(name = "id",required = false) Optional<Integer> id,
+            @RequestParam(name = "type",required = false)Optional<UnitTypes> type){
+        List<BuildingUnit> units = new LinkedList<>();
+
+        if(id.isPresent()){
+            Integer unitId = id.get();
+            units.add(unitsService.getUnit(unitId).get());
+        }if(type.isPresent()){
+            UnitTypes unitType = type.get();
+            units.addAll(unitsService.getUnits(unitType));
+        }else{
+            units.addAll(unitsService.getUnits());
+        }
+        return ResponseEntity.ok(units);
     }
 }
