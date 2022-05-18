@@ -1,12 +1,3 @@
-CREATE  TABLE mytable
-(
-    id INT AUTO_INCREMENT,
-    myname VARCHAR(10),
-    PRIMARY KEY ( id )
-
-);
-
-
 CREATE TABLE lesapro_building_adress(
     id INT NOT NULL AUTO_INCREMENT,
     street VARCHAR(100),
@@ -40,6 +31,18 @@ CREATE TABLE lesapro_floors(
     FOREIGN KEY(building_id) REFERENCES lesapro_buildings(id)
 );
 
+CREATE TABLE lesapro_units(
+    id INT NOT NULL AUTO_INCREMENT,
+    building_id INT,
+    floor_id INT,
+    unit_type VARCHAR(30),
+    area DOUBLE,
+    price DOUBLE,
+    price_period VARCHAR(30),
+
+    PRIMARY KEY(id)
+);
+
 
 INSERT INTO lesapro_building_adress(
     street,
@@ -71,6 +74,8 @@ INSERT INTO lesapro_floors(
 ) VALUES(
     4,1,2
 );
+
+
 
  SELECT * FROM lesapro_buildings;
  SELECT * FROM lesapro_building_adress;
