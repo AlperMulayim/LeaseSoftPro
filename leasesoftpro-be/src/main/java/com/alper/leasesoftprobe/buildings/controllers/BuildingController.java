@@ -1,9 +1,11 @@
 package com.alper.leasesoftprobe.buildings.controllers;
 
 import com.alper.leasesoftprobe.buildings.entities.BuildingAdress;
+import com.alper.leasesoftprobe.buildings.entities.BuildingUnit;
 import com.alper.leasesoftprobe.buildings.entities.Floor;
 import com.alper.leasesoftprobe.buildings.entities.LeasProBuilding;
 import com.alper.leasesoftprobe.buildings.services.BuildingAdressService;
+import com.alper.leasesoftprobe.buildings.services.BuildingUnitsService;
 import com.alper.leasesoftprobe.buildings.services.FloorService;
 import com.alper.leasesoftprobe.buildings.services.LeasProBuildingService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,8 @@ public class BuildingController {
     @Autowired
     public FloorService floorService;
 
+    @Autowired
+    public BuildingUnitsService unitsService;
     @GetMapping("/adress")
     public ResponseEntity <List<BuildingAdress>> getAdress(@RequestParam(name = "id") Optional<Integer> id){
         List<BuildingAdress> adresses = buildingService.getAllAdress(id);
@@ -76,6 +80,10 @@ public class BuildingController {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
 
+    @GetMapping("/{buildingId}/units")
+    public ResponseEntity<List<BuildingUnit>> getUnits(){
+        return  ResponseEntity.ok(unitsService.getUnits());
     }
 }
