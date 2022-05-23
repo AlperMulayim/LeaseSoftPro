@@ -34,6 +34,22 @@ CREATE TABLE lesapro_contacts(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE lesapro_offers(
+    id INT NOT NULL AUTO_INCREMENT,
+    offer_uid BINARY(16),
+    contact_id INT,
+    unit_id INT,
+    offer_status VARCHAR(30),
+    offer_date DATE,
+    offer_end_date DATE,
+    discount_rate DOUBLE,
+    commission_price DOUBLE,
+
+    PRIMARY KEY(id),
+    FOREIGN KEY (contact_id) REFERENCES lesapro_contacts(id),
+    FOREIGN KEY(unit_id) REFERENCES lesapro_units(id)
+);
+
 CREATE TABLE lesapro_floors(
     id INT NOT NULL AUTO_INCREMENT,
     total_unit_per_floor INT,
