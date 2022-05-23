@@ -21,6 +21,19 @@ CREATE TABLE lesapro_buildings(
     FOREIGN KEY(adress_id) REFERENCES lesapro_building_adress(id)
 );
 
+CREATE TABLE lesapro_contacts(
+    id INT NOT NULL AUTO_INCREMENT,
+    user_uid BINARY(16),
+    username VARCHAR(110) NOT NULL,
+    surname VARCHAR(150) NOT NULL,
+    phone_number VARCHAR(30) NOT NULL,
+    adress VARCHAR(300),
+    company VARCHAR(50),
+    email VARCHAR(100),
+
+    PRIMARY KEY(id)
+);
+
 CREATE TABLE lesapro_floors(
     id INT NOT NULL AUTO_INCREMENT,
     total_unit_per_floor INT,
