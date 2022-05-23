@@ -1,13 +1,11 @@
 package com.alper.leasesoftprobe.offers.controller;
 
+import com.alper.leasesoftprobe.offers.dtos.OfferDTO;
 import com.alper.leasesoftprobe.offers.entities.Offer;
 import com.alper.leasesoftprobe.offers.services.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,8 +20,8 @@ public class OfferController {
         return  ResponseEntity.ok(this.offerService.getOffers());
     }
 
-    @PostMapping("")
-    public Offer saveOffer(Offer offer){
-        return  offerService.saveOffer(offer);
+    @PostMapping
+    public Offer saveOffer(@RequestBody  OfferDTO offer){
+      return   offerService.saveOffer(offer);
     }
 }

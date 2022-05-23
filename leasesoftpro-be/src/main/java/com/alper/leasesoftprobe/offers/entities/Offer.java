@@ -5,7 +5,10 @@ import com.alper.leasesoftprobe.contacts.entity.Contact;
 import com.alper.leasesoftprobe.offers.enums.OfferStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -14,6 +17,9 @@ import java.util.UUID;
 @Entity
 @Table(name = "lesapro_offers")
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Offer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +53,6 @@ public class Offer {
     private Double discountRate;
 
     @Column(name = "commission_price")
-    private Double comissionPrice;
+    private Double commissionPrice;
 
 }
