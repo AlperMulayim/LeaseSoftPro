@@ -94,7 +94,7 @@
                   font-family: verdana;
                   font-size: 15px;
                   background-color: #8d8d8d;
-                  width: 100%;
+                  width: 600px;
             }
             .company-info{
                 height: 110px;
@@ -114,6 +114,27 @@
                 font-size: 12px;
                 display: inline-block;
             }
+
+            table{
+                 border: 1px solid;
+                 width:600px;
+            }
+            th{
+                font-size: 11px;
+                 height: 30px;
+                 text-align: left;
+                 padding: 15px;
+                 padding-bottom: 0px;
+                 border-bottom: 2px solid #ddd;
+            }
+             td{
+                font-size: 10px;
+                 height: 30px;
+                 text-align: left;
+                 padding: 15px;
+                 border-bottom: 1px solid #ddd;
+             }
+
         </style>
 </head>
 <body>
@@ -290,5 +311,30 @@
         </div>
     </div>
 </div>
+
+<div class="unit-detail-header">
+    UNIT SERVICES:
+</div>
+<table>
+    <thead>
+    <tr>
+        <th> Id </th>
+        <th> Name </th>
+        <th> Description </th>
+        <th> Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${services.empty}">
+        <td colspan="2"> No Services Available </td>
+    </tr>
+    <tr th:each="service : ${services}">
+        <td><span th:text="${service.operationId}">  </span></td>
+        <td><span th:text="${service.name}">  </span></td>
+        <td><span th:text="${service.description}">  </span></td>
+        <td><span th:text="${service.price}">  </span></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

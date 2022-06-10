@@ -8,6 +8,8 @@ import com.alper.leasesoftprobe.contacts.service.ContactService;
 import com.alper.leasesoftprobe.offers.entities.Offer;
 import com.alper.leasesoftprobe.offers.services.OfferService;
 import com.alper.leasesoftprobe.pdfgenerator.PDFGenerator;
+import com.alper.leasesoftprobe.vipservices.entities.VipOperations;
+import com.alper.leasesoftprobe.vipservices.services.VipOperationsService;
 import com.lowagie.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class OfferReportService  implements  ReportService{
@@ -28,6 +31,8 @@ public class OfferReportService  implements  ReportService{
 
     @Autowired
     ReportRepository repository;
+    @Autowired
+    VipOperationsService operationsService;
 
     @Override
     public OfferReportData getReportData(Integer offerId){
@@ -41,6 +46,11 @@ public class OfferReportService  implements  ReportService{
             Contact contact = offer.getContact();
             BuildingUnit unit = offer.getUnit();
             LeasProBuilding building = buildingService.getBuilding(unit.getBuildingId()).get();
+            List<VipOperations> vipOperations = operationsService.getVipOperations();
+
+            List<VipOperations> unitOperations = vipOperations.stream()
+                    .filter(v-> v.getUnits().contains(unit))
+                    .collect(Collectors.toList());
 
             data =  OfferReportData.builder()
                     .uuid(offer.getOfferUID())
@@ -58,6 +68,7 @@ public class OfferReportService  implements  ReportService{
                     .period(unit.getPricePeriod().name())
                     .floor(unit.getFloorId())
                     .price(unit.getPrice())
+                    .services(unitOperations)
                     .reportId(UUID.randomUUID())
                     .build();
         }
@@ -70,7 +81,9 @@ public class OfferReportService  implements  ReportService{
 
         PDFGenerator pdfGenerator = new PDFGenerator();
         Map<String, Object> data = new HashMap<>();
-        data.put("offers",reportData);
+        OfferReportData offerData = (OfferReportData) reportData;
+        data.put("offers",offerData);
+        data.put("services",offerData.getServices());
         String str = pdfGenerator.parseThymeleafTemplate("thymeleaf_template.html",data);
         try {
            return pdfGenerator.generatePdfFromHtml(str,"offer");

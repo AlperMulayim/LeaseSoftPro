@@ -1,10 +1,12 @@
 package com.alper.leasesoftprobe.report;
 
+import com.alper.leasesoftprobe.vipservices.entities.VipOperations;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -28,4 +30,5 @@ public class OfferReportData implements  ReportData {
     Integer floor;
     Double price;
     UUID reportId;
+    List<VipOperations> services;
 }
