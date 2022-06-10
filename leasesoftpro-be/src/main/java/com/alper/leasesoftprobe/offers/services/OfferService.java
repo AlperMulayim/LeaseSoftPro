@@ -30,6 +30,9 @@ public class OfferService {
         return  repository.findAll();
     }
 
+    public Optional<Offer> getOffer(Integer id){
+        return  repository.findById(id);
+    }
     public Offer saveOffer(OfferDTO offerDTO){
 
         Contact contact = contactService.getContact(offerDTO.getContactId());

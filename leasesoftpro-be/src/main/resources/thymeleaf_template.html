@@ -145,7 +145,7 @@
             <p>UID: </p>
         </div>
         <div class="info">
-            <p> XXXXXXXX-XXXX</p>
+            <p th:text="${offers.uuid}"> </p>
         </div>
     </div>
     <div class="info-row">
@@ -153,7 +153,7 @@
             <p> DATE:  </p>
         </div>
         <div class="info">
-            <p> 10.10.22</p>
+            <p th:text="${offers.date}"> </p>
         </div>
     </div>
     <div class="info-row">
@@ -161,7 +161,7 @@
             <p> DUEDATE: </p>
         </div>
         <div class="info">
-            <p> 12.10.22</p>
+            <p th:text="${offers.dueDate}"> </p>
         </div>
     </div>
     <div class="info-row">
@@ -169,7 +169,7 @@
             <p> STATUS: </p>
         </div>
         <div class="info">
-            <p> NEW </p>
+            <p th:text="${offers.status}"> </p>
         </div>
     </div>
 </div>
@@ -210,7 +210,6 @@
             <p> alper.mulayim@hotmail.com</p>
         </div>
     </div>
-</div>
 </div>
 <div class="unit-details">
     <div class="unit-detail-header">
@@ -272,6 +271,6 @@
             <p>  1000 $</p>
         </div>
     </div>
-
+</div>
 </body>
 </html>

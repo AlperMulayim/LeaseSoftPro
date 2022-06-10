@@ -23,18 +23,6 @@ public class OfferController {
     @GetMapping("")
     public ResponseEntity<List<Offer>> getOffers(){
         List<Offer> offers = this.offerService.getOffers();
-
-        PDFGenerator pdfGenerator = new PDFGenerator();
-        Map<String, Object> data = new HashMap<>();
-        data.put("offers",offers);
-        String str = pdfGenerator.parseThymeleafTemplate("thymeleaf_template.html",data);
-        try {
-            pdfGenerator.generatePdfFromHtml(str,"offer");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (DocumentException e) {
-            throw new RuntimeException(e);
-        }
         return  ResponseEntity.ok(offers);
 
     }

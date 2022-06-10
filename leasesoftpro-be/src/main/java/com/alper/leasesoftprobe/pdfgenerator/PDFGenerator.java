@@ -10,6 +10,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import java.io.*;
+import java.util.HashMap;
 import java.util.Map;
 
 @Component
