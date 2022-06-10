@@ -27,4 +27,5 @@ public class OfferReportData implements  ReportData {
     String period;
     Integer floor;
     Double price;
+    UUID reportId;
 }

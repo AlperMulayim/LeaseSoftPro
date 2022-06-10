@@ -15,9 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 @Service
 public class OfferReportService  implements  ReportService{
@@ -26,6 +24,9 @@ public class OfferReportService  implements  ReportService{
 
     @Autowired
     LeasProBuildingService buildingService;
+
+    @Autowired
+    ReportRepository repository;
 
     @Override
     public OfferReportData getReportData(Integer offerId){
@@ -56,8 +57,10 @@ public class OfferReportService  implements  ReportService{
                     .period(unit.getPricePeriod().name())
                     .floor(unit.getFloorId())
                     .price(unit.getPrice())
+                    .reportId(UUID.randomUUID())
                     .build();
         }
+        save(data);
         return  data;
     }
 
@@ -80,6 +83,17 @@ public class OfferReportService  implements  ReportService{
         return getReportData(reportId);
     }
 
+    @Override
+    public ReportData save(ReportData data) {
+
+        OfferReportData  offerReport = (OfferReportData) data;
+        Report report = Report.builder()
+                .reportId(offerReport.getReportId())
+                .username(offerReport.getUsername())
+                .date(new Date()).build();
+        repository.save(report);
+        return  data;
+    }
 
 
 }

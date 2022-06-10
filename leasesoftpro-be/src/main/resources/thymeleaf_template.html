@@ -112,6 +112,7 @@
             .document-info{
                 height: 20px;
                 font-size: 12px;
+                display: inline-block;
             }
         </style>
 </head>
@@ -125,7 +126,7 @@
 
 <div class="document-info">
     <p>DOCUMENT NUMBER: </p>
-    <p th:text="${offers.documentNumber}"> </p>
+    <p th:text="${offers.reportId}"> </p>
 </div>
 
 
