@@ -16,6 +16,17 @@ CREATE TABLE lesapro_reports(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE lesapro_vip_operations(
+    id INT NOT NULL AUTO_INCREMENT,
+    operation_id VARCHAR(4),
+    duration INTEGER,
+    price DOUBLE,
+    operation_description VARCHAR(300),
+    operation_type VARCHAR(20),
+    operation_name VARCHAR(100),
+    PRIMARY KEY(id)
+);
+
 
 CREATE TABLE lesapro_buildings(
     id INT NOT NULL AUTO_INCREMENT,
