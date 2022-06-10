@@ -8,6 +8,14 @@ CREATE TABLE lesapro_building_adress(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE lesapro_reports(
+    id INT NOT NULL AUTO_INCREMENT,
+    report_id BINARY(16),
+    report_date DATE,
+    user_name VARCHAR(200),
+    PRIMARY KEY(id)
+);
+
 
 CREATE TABLE lesapro_buildings(
     id INT NOT NULL AUTO_INCREMENT,
