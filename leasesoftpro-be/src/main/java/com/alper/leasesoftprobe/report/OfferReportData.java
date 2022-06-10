@@ -16,4 +16,15 @@ public class OfferReportData implements  ReportData {
     String date;
     String dueDate;
     String status;
+    String username;
+    String phone;
+    String address;
+    String email;
+    String type;
+    String buildingAdress;
+    String buildingName;
+    Double area;
+    String period;
+    Integer floor;
+    Double price;
 }

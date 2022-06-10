@@ -1,5 +1,10 @@
 package com.alper.leasesoftprobe.report;
 
+import com.alper.leasesoftprobe.buildings.entities.BuildingUnit;
+import com.alper.leasesoftprobe.buildings.entities.LeasProBuilding;
+import com.alper.leasesoftprobe.buildings.services.LeasProBuildingService;
+import com.alper.leasesoftprobe.contacts.entity.Contact;
+import com.alper.leasesoftprobe.contacts.service.ContactService;
 import com.alper.leasesoftprobe.offers.entities.Offer;
 import com.alper.leasesoftprobe.offers.services.OfferService;
 import com.alper.leasesoftprobe.pdfgenerator.PDFGenerator;
@@ -19,19 +24,38 @@ public class OfferReportService  implements  ReportService{
     @Autowired
     OfferService offerService;
 
+    @Autowired
+    LeasProBuildingService buildingService;
+
     @Override
     public OfferReportData getReportData(Integer offerId){
         Optional<Offer>  offerOpt = offerService.getOffer(offerId);
+
         OfferReportData data = new OfferReportData();
         DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd");
 
         if(offerOpt.isPresent()){
             Offer offer = offerOpt.get();
+            Contact contact = offer.getContact();
+            BuildingUnit unit = offer.getUnit();
+            LeasProBuilding building = buildingService.getBuilding(unit.getBuildingId()).get();
+
             data =  OfferReportData.builder()
                     .uuid(offer.getOfferUID())
                     .date(dateFormat.format(offer.getOfferDate()))
                     .dueDate(dateFormat.format(offer.getDueDate()))
                     .status(offer.getStatus().toString())
+                    .username(contact.getUsername() +" " + contact.getSurname() + " - " + contact.getContactUuid())
+                    .address(contact.getAdress())
+                    .email(contact.getEmail())
+                    .phone(contact.getPhoneNumber())
+                    .buildingAdress(building.getAdress().getStreet() + " / " + building.getAdress().getCity())
+                    .area(unit.getArea())
+                    .buildingName(building.getName())
+                    .type(unit.getUnitType().name())
+                    .period(unit.getPricePeriod().name())
+                    .floor(unit.getFloorId())
+                    .price(unit.getPrice())
                     .build();
         }
         return  data;
@@ -49,8 +73,7 @@ public class OfferReportService  implements  ReportService{
         } catch (
                 IOException e) {
             throw new RuntimeException(e);
-        } catch (
-                DocumentException e) {
+        } catch (DocumentException e) {
             throw new RuntimeException(e);
         }
 
