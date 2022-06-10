@@ -3,11 +3,16 @@ package com.alper.leasesoftprobe.offers.controller;
 import com.alper.leasesoftprobe.offers.dtos.OfferDTO;
 import com.alper.leasesoftprobe.offers.entities.Offer;
 import com.alper.leasesoftprobe.offers.services.OfferService;
+import com.alper.leasesoftprobe.pdfgenerator.PDFGenerator;
+import com.lowagie.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("api/v1/offers")
@@ -17,7 +22,21 @@ public class OfferController {
 
     @GetMapping("")
     public ResponseEntity<List<Offer>> getOffers(){
-        return  ResponseEntity.ok(this.offerService.getOffers());
+        List<Offer> offers = this.offerService.getOffers();
+
+        PDFGenerator pdfGenerator = new PDFGenerator();
+        Map<String, Object> data = new HashMap<>();
+        data.put("offers",offers);
+        String str = pdfGenerator.parseThymeleafTemplate("thymeleaf_template.html",data);
+        try {
+            pdfGenerator.generatePdfFromHtml(str,"offer");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (DocumentException e) {
+            throw new RuntimeException(e);
+        }
+        return  ResponseEntity.ok(offers);
+
     }
 
     @PostMapping

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+
+            .offer-header{
+                  text-align: center;
+                  color: black;
+                  font-family: verdana;
+                  font-size: 20px;
+                  background-color: #8d8d8d;
+                  width: 600px;
+                  padding-left: 10px;
+
+            }
+            .client-details{
+                color: black;
+                font-family: sans-serif;
+                font-size: 10px;
+                height: 100px;
+                border: 1px solid #8d8d8d;
+                width:300px;
+                background-color: #eeeeee;
+                display: inline-block;
+            }
+            .offer-details{
+                color: black;
+                font-family: sans-serif;
+                font-size: 10px;
+                height: 100px;
+                border: 1px solid #8d8d8d;
+                width:300px;
+                background-color: #eeeeee;
+                display: inline-block;
+
+            }
+            .offer-detail-header{
+                  text-align: left;
+                  color:black;
+                  font-family: verdana;
+                  font-size: 15px;
+                  background-color: #8d8d8d;
+                  width: 100%;
+            }
+            .info-row{
+                width:100%;
+                padding-top: 0px;
+                height: 16px;
+                padding-left: 10px;
+
+            }
+            .info-header{
+                font-weight: bold;
+                display: inline-block;
+                font-size: 10px;
+            }
+            .info{
+                display: inline-block;
+                font-size: 10px;
+            }
+            .client-detail-header{
+                  text-align: left;
+                  color:black;
+                  font-family: verdana;
+                  font-size: 15px;
+                  background-color: #8d8d8d;
+                  width: 100%;
+            }
+
+            .unit-info-header{
+                font-weight: bold;
+                display: inline-block;
+                font-size: 13px;
+            }
+
+            .unit-info{
+                display: inline-block;
+                font-size: 12px;
+            }
+
+            .unit-details{
+                color: black;
+                font-family: sans-serif;
+                height: 200px;
+                border: 1px solid #8d8d8d;
+                width: 600px;
+                background-color: #eeeeee;
+                display: inline-block;
+                margin-top:20px;
+            }
+            .unit-detail-header{
+                  text-align: left;
+                  color:black;
+                  font-family: verdana;
+                  font-size: 15px;
+                  background-color: #8d8d8d;
+                  width: 100%;
+            }
+            .company-info{
+                height: 110px;
+                width: 600px;
+            }
+            .image{
+                display: inline-block;
+            }
+            .company{
+                height: 110px;
+                width: 400px;
+                display: inline-block;
+            }
+
+        </style>
+</head>
+<body>
+<div class="page">
+
+</div>
+<div class="offer-header">
+    <p> CONTRACT OFFER DETAILS AND INFORMATIONS </p>
+</div>
+
+
+<div class="company-info">
+    <div class="image">
+        <div class="info-row">
+            <div class="info">
+                <div>
+                    <img style="width: 100px; height: 100px;" src="https://d5nunyagcicgy.cloudfront.net/external_assets/hero_examples/hair_beach_v391182663/original.jpeg"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="company">
+        LEASE SOFT PRO DEMO APP.
+    </div>
+
+</div>
+
+<div class="offer-details">
+    <div class="offer-detail-header">
+        OFFER DETAILS:
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p>UID: </p>
+        </div>
+        <div class="info">
+            <p> XXXXXXXX-XXXX</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p> DATE:  </p>
+        </div>
+        <div class="info">
+            <p> 10.10.22</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p> DUEDATE: </p>
+        </div>
+        <div class="info">
+            <p> 12.10.22</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p> STATUS: </p>
+        </div>
+        <div class="info">
+            <p> NEW </p>
+        </div>
+    </div>
+</div>
+
+<div class="client-details">
+    <div class="client-detail-header">
+        CLIENT DETAILS:
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p> NAME: </p>
+        </div>
+        <div class="info">
+            <p> Alper Mulayim</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p> ADDRESS: </p>
+        </div>
+        <div class="info">
+            <p> Muslihittin Mah. Kadioglu Sok. 28/2 Mentese Mugla</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p> TELEPHONE: </p>
+        </div>
+        <div class="info">
+            <p> +905053760500</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="info-header">
+            <p> EMAIL: </p>
+        </div>
+        <div class="info">
+            <p> alper.mulayim@hotmail.com</p>
+        </div>
+    </div>
+</div>
+</div>
+<div class="unit-details">
+    <div class="unit-detail-header">
+        UNIT DETAILS:
+    </div>
+    <div class="info-row">
+        <div class="unit-info-header">
+            <p> TYPE: </p>
+        </div>
+        <div class="unit-info">
+            <p> SHOPPING AREA</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="unit-info-header">
+            <p> BUILDING: </p>
+        </div>
+        <div class="unit-info">
+            <p>  CCENTER SHOP</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="unit-info-header">
+            <p> ADDRESS: </p>
+        </div>
+        <div class="unit-info">
+            <p> Muslihittin Mah. Kadioglu Sok. 28/2 Mentese Mugla</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="unit-info-header">
+            <p> FLOOR: </p>
+        </div>
+        <div class="unit-info">
+            <p> 5</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="unit-info-header">
+            <p> AREA: </p>
+        </div>
+        <div class="unit-info">
+            <p> 300 M2</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="unit-info-header">
+            <p> PERIOD: </p>
+        </div>
+        <div class="unit-info">
+            <p> MONTHLY</p>
+        </div>
+    </div>
+    <div class="info-row">
+        <div class="unit-info-header">
+            <p> PRICE: </p>
+        </div>
+        <div class="unit-info">
+            <p>  1000 $</p>
+        </div>
+    </div>
+
+</body>
+</html>
