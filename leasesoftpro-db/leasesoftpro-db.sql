@@ -27,6 +27,14 @@ CREATE TABLE lesapro_vip_operations(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE lesapro_services_units(
+    id  INT AUTO_INCREMENT,
+    unit_id INT,
+    service_id INT,
+    PRIMARY KEY(id),
+    FOREIGN KEY(unit_id) REFERENCES lesapro_units(id),
+    FOREIGN KEY(service_id)  REFERENCES lesapro_vip_operations(id)
+);
 
 CREATE TABLE lesapro_buildings(
     id INT NOT NULL AUTO_INCREMENT,

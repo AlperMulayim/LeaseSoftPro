@@ -1,11 +1,13 @@
 package com.alper.leasesoftprobe.vipservices.entities;
 
+import com.alper.leasesoftprobe.buildings.entities.BuildingUnit;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.IdentityHashMap;
+import java.util.List;
 
 @Entity
 @Table(name="lesapro_vip_operations")
@@ -34,6 +36,14 @@ public class VipOperations {
 
     @Column(name="operation_description")
     private String  description;
+
+    @ManyToMany
+    @JoinTable(
+            name = "lesapro_services_units",
+            joinColumns = @JoinColumn(name="service_id"),
+            inverseJoinColumns = @JoinColumn(name = "unit_id")
+    )
+    private List<BuildingUnit> units;
 }
 
 
