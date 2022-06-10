@@ -32,9 +32,9 @@ public class PDFGenerator {
         return templateEngine.process(templateFile, context);
     }
 
-    public void generatePdfFromHtml(String html, String outFile) throws IOException, DocumentException {
+    public ByteArrayOutputStream generatePdfFromHtml(String html, String outFile) throws IOException, DocumentException {
         String outputFolder = System.getProperty("user.home") +  File.separator + "desktop" + File.separator + outFile;
-        OutputStream outputStream = new FileOutputStream(outputFolder);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
         ITextRenderer renderer = new ITextRenderer();
         renderer.setDocumentFromString(html);
@@ -42,5 +42,6 @@ public class PDFGenerator {
         renderer.createPDF(outputStream);
 
         outputStream.close();
+        return outputStream;
     }
 }

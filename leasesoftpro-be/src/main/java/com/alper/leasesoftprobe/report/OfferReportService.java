@@ -12,6 +12,7 @@ import com.lowagie.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -65,14 +66,14 @@ public class OfferReportService  implements  ReportService{
     }
 
     @Override
-    public ReportData generateReport(Integer reportId, ReportData reportData) {
+    public ByteArrayOutputStream generateReport(Integer reportId, ReportData reportData) {
 
         PDFGenerator pdfGenerator = new PDFGenerator();
         Map<String, Object> data = new HashMap<>();
         data.put("offers",reportData);
         String str = pdfGenerator.parseThymeleafTemplate("thymeleaf_template.html",data);
         try {
-            pdfGenerator.generatePdfFromHtml(str,"offer");
+           return pdfGenerator.generatePdfFromHtml(str,"offer");
         } catch (
                 IOException e) {
             throw new RuntimeException(e);
@@ -80,7 +81,6 @@ public class OfferReportService  implements  ReportService{
             throw new RuntimeException(e);
         }
 
-        return getReportData(reportId);
     }
 
     @Override
