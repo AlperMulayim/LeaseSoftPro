@@ -99,6 +99,27 @@ CREATE TABLE lesapro_units(
     PRIMARY KEY(id)
 );
 
+CREATE TABLE IF NOT EXISTS users (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(1000) NOT NULL,
+  `enabled` INT NOT NULL,
+  PRIMARY KEY (`id`)
+  );
+
+
+CREATE TABLE IF NOT EXISTS authorities (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(45) NOT NULL,
+  `authority` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`)
+  );
+
+
+INSERT IGNORE INTO authorities VALUES (NULL, 'john', 'write'); 
+INSERT IGNORE INTO users VALUES (NULL, 'john', '12345', '1');
+
+
 
 INSERT INTO lesapro_building_adress(
     street,
