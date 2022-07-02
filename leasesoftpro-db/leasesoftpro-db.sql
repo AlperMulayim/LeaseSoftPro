@@ -13,6 +13,7 @@ CREATE TABLE lesapro_reports(
     report_id BINARY(16),
     report_date DATE,
     user_name VARCHAR(200),
+    report_data VARCHAR(2000) NOT NULL,
     PRIMARY KEY(id)
 );
 
