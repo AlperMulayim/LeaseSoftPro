@@ -103,7 +103,9 @@ public class OfferReportService  implements  ReportService{
         Report report = Report.builder()
                 .reportId(offerReport.getReportId())
                 .username(offerReport.getUsername())
-                .date(new Date()).build();
+                .date(new Date())
+                .data(data.toString())
+                .build();
         repository.save(report);
         return  data;
     }
