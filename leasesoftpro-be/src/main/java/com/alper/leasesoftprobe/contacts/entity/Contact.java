@@ -14,7 +14,7 @@ public class Contact {
     private  Integer id;
 
     @Column(name = "user_uid", updatable = false)
-    private UUID contactUuid = UUID.randomUUID();
+    private String contactUuid;
 
     @Column(name = "username")
     private String username;
