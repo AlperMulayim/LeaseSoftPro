@@ -38,8 +38,8 @@ public class LeaseProJDBCSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
 
 //        http.authorizeRequests().antMatchers("*").permitAll();
-        http
-                .authorizeRequests().antMatchers("/api/v1/users").permitAll();
+//        http
+//                .authorizeRequests().antMatchers("/api/v1/users").permitAll();
         http
                 .authorizeRequests() .anyRequest().authenticated();
     }
