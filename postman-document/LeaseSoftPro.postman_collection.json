@@ -292,6 +292,21 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass11",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alper2",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -303,7 +318,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"contactId\":\"c5860f89-4220-4d9e-913f-ca1191d75b40\",\n        \"unitId\":1,\n        \"status\": \"ACCEPTED\",\n        \"dueDate\": \"05.03.2022\",\n        \"discountRate\": 10.0,\n        \"commissionPrice\": 100.0\n    }",
+					"raw": "",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -311,7 +326,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/reports/offers",
+					"raw": "http://localhost:8080/api/v1/reports/offers/11",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -321,7 +336,8 @@
 						"api",
 						"v1",
 						"reports",
-						"offers"
+						"offers",
+						"11"
 					]
 				}
 			},
@@ -365,6 +381,51 @@
 						"offers"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "users",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Disposition",
+						"value": "inline; filename=citiesreport.pdf",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"uname\":\"alper\",\n        \"pass\":\"pass11\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
