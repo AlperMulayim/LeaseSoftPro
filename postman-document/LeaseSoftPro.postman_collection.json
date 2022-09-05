@@ -166,6 +166,21 @@
 				"disableBodyPruning": true
 			},
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "pass11",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "alper2",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"body": {
@@ -178,7 +193,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/v1/contacts",
+					"raw": "http://localhost:8080/api/v1/contacts?page=100&size=9",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -188,6 +203,16 @@
 						"api",
 						"v1",
 						"contacts"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "100"
+						},
+						{
+							"key": "size",
+							"value": "9"
+						}
 					]
 				}
 			},
