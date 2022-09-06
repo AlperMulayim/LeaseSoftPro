@@ -64,7 +64,7 @@ CREATE TABLE lesapro_contacts(
 
 CREATE TABLE lesapro_offers(
     id INT NOT NULL AUTO_INCREMENT,
-    offer_uid BINARY(16),
+    offer_uid VARCHAR(50),
     contact_id INT,
     unit_id INT,
     offer_status VARCHAR(30),

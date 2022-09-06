@@ -27,7 +27,7 @@ public class Offer {
     private Integer id;
 
     @Column(name = "offer_uid", updatable = false)
-    private UUID offerUID = UUID.randomUUID();
+    private String offerUID;
 
     @OneToOne
     @JoinColumn(name = "contact_id", referencedColumnName = "id")
@@ -41,11 +41,11 @@ public class Offer {
     @Column(name = "offer_status")
     private OfferStatus status;
 
-    @JsonFormat(pattern = "MM.dd.YYYY")
+    @JsonFormat(pattern = "dd.mm.YYYY")
     @Column(name = "offer_date")
     private Date offerDate;
 
-    @JsonFormat(pattern = "MM.dd.YYYY")
+    @JsonFormat(pattern = "dd.mm.YYYY")
     @Column(name = "offer_end_date")
     private Date dueDate;
 
