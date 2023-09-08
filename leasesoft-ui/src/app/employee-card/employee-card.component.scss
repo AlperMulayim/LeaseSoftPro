@@ -1,0 +1,47 @@
+.employee-card {
+    width: 350px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    flex: 10;
+    font-family: 'Kufam';
+
+    .employee-photo {
+        flex: 9;
+        display: flex;
+        background-color: #F6F6F6;
+        justify-content: center;
+        align-items: center;
+        .photo-img{
+            width: 250px;
+            height: 250px;
+        }
+    }
+
+    .employee-details {
+        display: flex;
+        flex: 1;
+        background-color: #FFBB50;
+        flex-direction: column;
+        padding: 23px;
+        justify-content: center;
+        border-radius: 5px;
+
+        .employee-name {
+            flex: 1;
+            color: #3B3A5D;
+            font-size: 25px;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .employee-jobtitle {
+            flex: 1;
+            color: #FFFFFF;
+            font-size: 20px;
+            font-weight: 400;
+            font-style: normal;
+        }
+    }
+
+}
