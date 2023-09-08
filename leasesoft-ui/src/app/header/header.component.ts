@@ -1,5 +1,6 @@
-import { Component, IterableDiffers, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderItem } from '../modals/HeaderItem';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -26,13 +27,14 @@ export class HeaderComponent implements OnInit {
       selected:false
     },
   ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   changeSelected(selected: HeaderItem){
       this.headerItems.forEach(item=> item.name ===selected.name ? item.selected  = true:  item.selected = false)
+      this.router.navigate([selected.name.toLowerCase()]);
 
   }
 
