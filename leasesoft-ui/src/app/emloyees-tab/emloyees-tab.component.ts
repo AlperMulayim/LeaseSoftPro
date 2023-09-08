@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../modals/Employee';
 
 @Component({
   selector: 'app-emloyees-tab',
@@ -7,6 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmloyeesTabComponent implements OnInit {
 
+  employees: Employee[] = [
+    {
+      name:"Alper",
+      surname: "Mulayim",
+      jobTitle:"Manager"
+    },
+    {
+      name:"Kate",
+      surname: "Kates",
+      jobTitle:"Senior Seller"
+    }
+  ]
   constructor() { }
 
   ngOnInit() {

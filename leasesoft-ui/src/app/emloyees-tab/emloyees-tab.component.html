@@ -1,4 +1,10 @@
 <p>
   emloyees-tab works!
-  <app-employee-card></app-employee-card>
+
 </p>
+
+<div class="employee-tab">
+  <div class="employee" *ngFor="let employee of employees">
+  <app-employee-card [employee]="employee"></app-employee-card>
+  </div>
+</div>

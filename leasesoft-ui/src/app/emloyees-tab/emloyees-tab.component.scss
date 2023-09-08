@@ -1,0 +1,9 @@
+.employee-tab{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .employee{
+        padding-right: 30px;
+    }
+}
