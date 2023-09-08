@@ -53,7 +53,6 @@ public class OfferReportService  implements  ReportService{
                     .collect(Collectors.toList());
 
             data =  OfferReportData.builder()
-                    .uuid(offer.getOfferUID())
                     .date(dateFormat.format(offer.getOfferDate()))
                     .dueDate(dateFormat.format(offer.getDueDate()))
                     .status(offer.getStatus().toString())

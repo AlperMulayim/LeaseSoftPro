@@ -39,7 +39,7 @@ public class OfferService {
         Optional<BuildingUnit> unit = unitsService.getUnit(offerDTO.getUnitId());
 
         Offer offer = Offer.builder().contact(contact)
-                .offerUID(UUID.randomUUID())
+                .offerUID(".")
                 .unit(unit.get())
                 .dueDate(offerDTO.getDueDate())
                 .offerDate(offerDTO.getDueDate())
