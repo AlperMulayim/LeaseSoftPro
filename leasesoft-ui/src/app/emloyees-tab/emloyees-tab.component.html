@@ -1,8 +1,7 @@
-
+<div class="employee-tab-title">
+  Our Expert Team
+</div>
 <div *ngIf="employees" class="employee-tab">
-  <div class="employee-tab-title">
-    Our Expert Team
-  </div>
   <div class="employee" *ngFor="let employee of employees">
   <app-employee-card [employee]="employee"></app-employee-card>
   </div>

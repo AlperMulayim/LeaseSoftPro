@@ -10,10 +10,11 @@ import { NotFoundComponent } from './pages/notfound/notfound.component';
 import { AboutPageComponent } from './pages/aboutpage/aboutpage.component';
 import { EmloyeesTabComponent } from './emloyees-tab/emloyees-tab.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  declarations: [				
+  declarations: [					
       AppComponent,
       ClientCardComponent,
       HeaderComponent,
@@ -21,7 +22,8 @@ import { EmployeeCardComponent } from './employee-card/employee-card.component';
       NotFoundComponent,
       AboutPageComponent,
       EmloyeesTabComponent,
-      EmployeeCardComponent
+      EmployeeCardComponent,
+      FooterComponent
    ],
   imports: [
     BrowserModule,
