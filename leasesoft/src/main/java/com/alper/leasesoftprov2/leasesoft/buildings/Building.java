@@ -18,6 +18,7 @@ public class Building {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @JsonProperty("name")
     @Column(name = "block_name")
     private String blockName;
 
@@ -27,9 +28,11 @@ public class Building {
     @Column(name = "building_size")
     private Double size;
 
+    @JsonProperty("beds")
     @Column(name = "num_bedrooms")
     private Integer bedrooms;
 
+    @JsonProperty("baths")
     @Column(name = "num_bathrooms")
     private Integer bathrooms;
 
@@ -47,5 +50,7 @@ public class Building {
     @Column(name="lot", precision = 10, scale=7)
     private BigDecimal lot;
 
+    @Column(name = "address")
+    private String address;
 
 }
