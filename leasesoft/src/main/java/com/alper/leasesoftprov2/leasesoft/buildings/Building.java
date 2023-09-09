@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "ldb_buildings")
 @AllArgsConstructor
@@ -38,5 +40,12 @@ public class Building {
     @JsonProperty("type")
     @Enumerated(EnumType.STRING)
     private BuildingType type;
+
+    @Column(name="lat", precision = 10, scale=7)
+    private BigDecimal lat;
+
+    @Column(name="lot", precision = 10, scale=7)
+    private BigDecimal lot;
+
 
 }
