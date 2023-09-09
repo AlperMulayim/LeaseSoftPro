@@ -24,3 +24,17 @@ CREATE TABLE  ldb_employees(
     job_title VARCHAR(255)
 );
 
+
+CREATE TABLE ldb_buildings(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    block_name VARCHAR(255),
+    city VARCHAR(255),
+    building_size DOUBLE,
+    num_bedrooms INT,
+    num_bathrooms INT,
+    num_carspace INT,
+    property_type ENUM('B_ROOM','B_OFFICE','B_APART'),
+    lat DECIMAL(10,7),
+    lot DECIMAL(10,7),
+    address VARCHAR(400)
+);
