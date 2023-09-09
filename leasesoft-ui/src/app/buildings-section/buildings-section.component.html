@@ -1,4 +1,5 @@
-<p>
-  buildings-section works!
-</p>
-<app-building-card></app-building-card>
+<div class="building-section">
+  <div *ngFor="let building of buildingList" class="building-card">
+    <app-building-card [building]="building"></app-building-card>
+  </div>-
+</div>

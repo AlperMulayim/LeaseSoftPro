@@ -1,0 +1,13 @@
+.building-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 100%;
+    .building-card{
+        flex: 1;
+        display: flex;
+        margin: 10px;
+    }
+}

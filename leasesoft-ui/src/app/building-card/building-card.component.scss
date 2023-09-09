@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
 
     .building-card-container {
         display: flex;
@@ -17,7 +16,7 @@
         background-color: #F5F1EF;
         border-radius: 5px;
         flex-direction: column;
-        padding: 10px;
+        padding: 20px;
 
         .img-container {
             flex: 4;
