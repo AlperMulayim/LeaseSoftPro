@@ -11,10 +11,12 @@ import { AboutPageComponent } from './pages/aboutpage/aboutpage.component';
 import { EmloyeesTabComponent } from './emloyees-tab/emloyees-tab.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { FooterComponent } from './footer/footer.component';
+import { BuildingsSectionComponent } from './buildings-section/buildings-section.component';
+import { BuildingCardComponent } from './building-card/building-card.component';
 
 
 @NgModule({
-  declarations: [					
+  declarations: [							
       AppComponent,
       ClientCardComponent,
       HeaderComponent,
@@ -23,7 +25,9 @@ import { FooterComponent } from './footer/footer.component';
       AboutPageComponent,
       EmloyeesTabComponent,
       EmployeeCardComponent,
-      FooterComponent
+      FooterComponent,
+      BuildingsSectionComponent,
+      BuildingCardComponent
    ],
   imports: [
     BrowserModule,
