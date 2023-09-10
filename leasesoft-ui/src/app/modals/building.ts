@@ -1,4 +1,5 @@
 export interface Building {
+    id:number;
     name: string;
     price: number;
     address: string;
@@ -8,4 +9,6 @@ export interface Building {
     size: number;
     listingType: string;
     priceUnit:string;
+    lat:number;
+    lot:number;
 }
