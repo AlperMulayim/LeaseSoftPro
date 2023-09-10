@@ -13,10 +13,11 @@ import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { BuildingsSectionComponent } from './buildings-section/buildings-section.component';
 import { BuildingCardComponent } from './building-card/building-card.component';
+import { MapLeasesoftComponent } from './map-leasesoft/map-leasesoft.component';
 
 
 @NgModule({
-  declarations: [							
+  declarations: [								
       AppComponent,
       ClientCardComponent,
       HeaderComponent,
@@ -27,7 +28,8 @@ import { BuildingCardComponent } from './building-card/building-card.component';
       EmployeeCardComponent,
       FooterComponent,
       BuildingsSectionComponent,
-      BuildingCardComponent
+      BuildingCardComponent,
+      MapLeasesoftComponent
    ],
   imports: [
     BrowserModule,
