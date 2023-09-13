@@ -38,3 +38,17 @@ CREATE TABLE ldb_buildings(
     lot DECIMAL(10,7),
     address VARCHAR(400)
 );
+
+CREATE TABLE ldb_listings(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    building_id INT,
+    listing_code VARCHAR(255),
+    listing_status ENUM('ACTIVE','PASSIVE','CONTRACT','COMPLETE'),
+    listing_type ENUM('MONTHLY','YEARLY','DAILY'),
+    price DOUBLE,
+    price_unit VARCHAR(4),
+    create_date DATETIME,
+    end_date DATETIME,
+    update_date DATETIME,
+    FOREIGN KEY(building_id) REFERENCES ldb_buildings(id)
+)

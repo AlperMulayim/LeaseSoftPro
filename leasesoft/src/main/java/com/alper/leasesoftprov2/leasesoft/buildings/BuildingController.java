@@ -16,6 +16,6 @@ public class BuildingController {
 
     @GetMapping("") //add filter, error handling. add pagination
     public List<Building> getAllBuildings(){
-        return this.service.getBuildings().stream().limit(12).collect(Collectors.toList());
+        return this.service.getBuildings().stream().limit(16).collect(Collectors.toList());
     }
 }
