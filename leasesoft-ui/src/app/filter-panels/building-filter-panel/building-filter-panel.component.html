@@ -3,34 +3,33 @@
     What are you looking for
   </div>
   <div class="city">
-    <input id="city" type="text" placeholder="City">
+    <input  id="city" type="text" placeholder="City" [(ngModel)]= "filterModel.city">
   </div>
   <div class="baths-and-beds">
     <div class="beds">
-      <input id="beds" type="number" placeholder="Beds">
+      <input id="beds" type="number" placeholder="Beds" [(ngModel)]= "filterModel.beds" >
     </div>
     <div class="baths">
-      <input id="baths" type="number" placeholder="Baths">
+      <input id="baths" type="number" placeholder="Baths" [(ngModel)]= "filterModel.baths">
     </div>
   </div>
   <div class="price">
     <div class="price-from">
-      <input id="priceFrom" type="number" placeholder="priceFrom">
+      <input id="priceFrom" type="number" placeholder="priceFrom" [(ngModel)]= "filterModel.priceFrom">
     </div>
     <div class="price-to">
-      <input id="priceTo" type="number" placeholder="priceTo">
+      <input id="priceTo" type="number" placeholder="priceTo" [(ngModel)]= "filterModel.priceTo">
     </div>
   </div>
   <div class="size">
     <div class="size-from">
-      <input id="sizeFrom" type="number" placeholder="sizeFrom">
+      <input id="sizeFrom" type="number" placeholder="sizeFrom" [(ngModel)]= "filterModel.sizeFrom">
     </div>
     <div class="size-to">
-      <input id="sizeTo" type="number" placeholder="sizeTo">
+      <input id="sizeTo" type="number" placeholder="sizeTo" [(ngModel)]= "filterModel.sizeTo">
     </div>
   </div>
-  <div class="search-button">
+  <div class="search-button" (click)="filter()">
     Search
   </div>
-
 </div>

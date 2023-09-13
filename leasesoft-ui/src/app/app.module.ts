@@ -15,6 +15,7 @@ import { BuildingsSectionComponent } from './buildings-section/buildings-section
 import { BuildingCardComponent } from './building-card/building-card.component';
 import { MapLeasesoftComponent } from './map-leasesoft/map-leasesoft.component';
 import { BuildingFilterPanelComponent } from './filter-panels/building-filter-panel/building-filter-panel.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BuildingFilterPanelComponent } from './filter-panels/building-filter-pa
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

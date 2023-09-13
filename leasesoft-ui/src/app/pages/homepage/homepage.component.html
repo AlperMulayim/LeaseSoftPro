@@ -1,7 +1,7 @@
 <div class="home-page-container">
   <div class="buildings-section">
     <div class="building-filter-panel">
-      <app-building-filter-panel></app-building-filter-panel>
+      <app-building-filter-panel (searchFilter)="searchFilter($event)"></app-building-filter-panel>
     </div>
     <div class="buildings" *ngIf="buildings">
       <app-buildings-section [buildingList]="buildings"></app-buildings-section>

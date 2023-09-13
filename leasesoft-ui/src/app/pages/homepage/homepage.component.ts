@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
+import { BuildingFilter } from 'src/app/modals/BuildingFilter';
 import { Building } from 'src/app/modals/building';
 import { BuildingService } from 'src/app/services/building.service';
 declare var google: any;
@@ -22,6 +23,10 @@ export class HomePageComponent implements OnInit{
       this.buildings = building;
       console.log(building);
     });
+  }
+
+  public searchFilter(filter: BuildingFilter){
+    console.log("home", filter);
   }
   
 }
