@@ -2,21 +2,23 @@
     display: flex;
     flex-direction: column;
     flex: 2;
+  
     .buildings-section{
         display: flex;
         flex-direction: row;
         flex: 9;
         margin-bottom: 20px;
+        flex-wrap: wrap;
         .building-filter-panel{
             display: flex;
             flex: 2;
-            min-width: 300px;
             background-color: #F5F1EF;
             justify-content: center;
             padding-top: 25px;
             margin-right: 20px;
             border-radius: 5px;
             margin-top: 40px;
+            min-width: 300px;
         }
         .buildings{
             display: flex;
