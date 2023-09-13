@@ -44,7 +44,7 @@ export class MapLeasesoftComponent implements OnInit {
       title: "Material Icon Font Marker",
     });
 
-    this.buildingService.getBuildings().subscribe(data=>{
+    this.buildingService.filterBuildings().subscribe(data=>{
         buildings = data;
         buildings.forEach(building => {
           new google.maps.Marker({

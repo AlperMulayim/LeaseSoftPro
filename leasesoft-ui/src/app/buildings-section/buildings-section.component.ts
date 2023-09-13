@@ -15,7 +15,7 @@ export class BuildingsSectionComponent implements OnInit {
   constructor(private service: BuildingService) { }
 
   ngOnInit() {
-    this.service.getBuildings().subscribe(building=>{
+    this.service.filterBuildings().subscribe(building=>{
       this.buildingList = building;
       console.log(building);
     });
