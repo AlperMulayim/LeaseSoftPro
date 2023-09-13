@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit,OnChanges } from '@angular/core';
 import { BuildingService } from '../services/building.service';
 import { Building } from '../modals/building';
 
@@ -9,13 +9,21 @@ import { Building } from '../modals/building';
 })
 export class MapLeasesoftComponent implements OnInit {
 
-  constructor(private buildingService: BuildingService) { }
+  @Input()
+  public buildingList: Building[];
 
-  ngOnInit() {
+  constructor() { }
+
+  ngOnInit(){
+  }
+
+  
+  ngOnChanges() {
+
+    console.log(this.buildingList);
     const myLatLng = { lat: -25.363, lng: 131.044 };
     const myLatLng2 = { lat: -25.563, lng: 131.044 };
 
-    let buildings: Building[] =[];
 
     const map = new google.maps.Map(
       document.getElementById("map") as HTMLElement,
@@ -44,24 +52,23 @@ export class MapLeasesoftComponent implements OnInit {
       title: "Material Icon Font Marker",
     });
 
-    this.buildingService.filterBuildings().subscribe(data=>{
-        buildings = data;
-        buildings.forEach(building => {
-          new google.maps.Marker({
-            position:  { lat: building.lat, lng: building.lot },
-            map,
-            label: {
-              text: building.id.toString(), // codepoint from https://fonts.google.com/icons
-              fontFamily: "Material Icons",
-              color: "#ffffff",
-              fontSize: "16px",
-            },
-            title: "Material Icon Font Marker",
-          });
-        });
+    this.buildingList.forEach(building => {
+      new google.maps.Marker({
+        position: { lat: building.lat, lng: building.lot },
+        map,
+        label: {
+          text: building.id.toString(), // codepoint from https://fonts.google.com/icons
+          fontFamily: "Material Icons",
+          color: "#ffffff",
+          fontSize: "16px",
+        },
+        title: "Material Icon Font Marker",
+      });
     });
-
-   
   }
 
+
+   
 }
+
+

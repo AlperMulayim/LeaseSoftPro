@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Building } from '../modals/building';
 import { BuildingService } from '../services/building.service';
 
@@ -9,16 +9,13 @@ import { BuildingService } from '../services/building.service';
 })
 export class BuildingsSectionComponent implements OnInit {
 
-
+  @Input()
   public buildingList: Building[]=[];
 
-  constructor(private service: BuildingService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.service.filterBuildings().subscribe(building=>{
-      this.buildingList = building;
-      console.log(building);
-    });
+    
   }
 
 }

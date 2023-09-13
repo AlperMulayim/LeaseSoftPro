@@ -1,5 +1,11 @@
 <p>
   homepage works!
 </p>
-<app-buildings-section></app-buildings-section>
-<app-map-leasesoft></app-map-leasesoft>
+<div *ngIf="buildings"  class="buildings">
+  <app-buildings-section [buildingList]="buildings"></app-buildings-section>
+</div>
+
+<div *ngIf="buildings" class="map">
+  <app-map-leasesoft [buildingList]="buildings"></app-map-leasesoft>
+</div>  
+
