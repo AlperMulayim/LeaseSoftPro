@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
       selected:false
     },
     {
-      name:"Blog",
+      name:"Contact",
       selected:false
     },
   ];

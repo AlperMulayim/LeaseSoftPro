@@ -1,9 +1,8 @@
-<div id="app-header" class="app-header">
+<div id="app-header" class="app-header-container">
   <div id="logo" class="logo"> <img src="assets/logo.svg" class="logo-img"></div>
   <div id="header-tabs" class="header-tabs">
     <div *ngFor="let item of headerItems" [ngClass]="item.selected ? 'header-tab--active': 'header-tab--disabled'"
       (click)="changeSelected(item)">
       {{item.name}}</div>
   </div>
-  <div class="contact" class="contact"> Contact</div>
 </div>

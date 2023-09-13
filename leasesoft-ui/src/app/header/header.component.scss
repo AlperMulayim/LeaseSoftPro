@@ -1,17 +1,18 @@
-.app-header{
+.app-header-container{
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 40px;
     align-items: center;
     justify-content: flex-end;
-    flex: 5;
+    flex: 4;
     flex-wrap: wrap;
     font-size: 20px;
     font-weight: 400;
     font-style: normal;
     font-family: 'Kufam';
-    margin-bottom: -50px;
+    position: absolute;
+    background-color: white;
     .logo{
         .logo-img{
             width: 150px;
@@ -21,12 +22,10 @@
     }
     .header-tabs{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         flex: 3;
         cursor: pointer;
         flex-wrap: wrap;
-        padding-right: 20px;
-
         .header-tab{
             flex: 1;
             display: flex;
@@ -40,14 +39,5 @@
             }
         }
     }
-    .contact{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        border-radius: 5px;
-        padding: 14px 50px;
-        background-color:#3B3A5E ;
-        color: white;
-    }
+
 }

@@ -13,19 +13,29 @@ declare var google: any;
 })
 export class HomePageComponent implements OnInit{
 
-  public buildings: Building[] = [];
-
-  apiLoaded: Observable<boolean>;
+public buildings: Building[] = [];
+public filter: BuildingFilter = new BuildingFilter();
 
  constructor(private service: BuildingService){}
   ngOnInit() {
-    this.service.filterBuildings().subscribe(building=>{
+    let defaultFilter: BuildingFilter = {
+      priceFrom: 98000,
+      beds: 3,
+      priceTo :99000,
+      sizeTo :160,
+      sizeFrom : 100
+    }
+    this.service.filterBuildings(defaultFilter).subscribe(building=>{
       this.buildings = building;
       console.log(building);
     });
   }
 
   public searchFilter(filter: BuildingFilter){
+    this.service.filterBuildings(filter).subscribe(building=>{
+      this.buildings = building;
+      console.log(building);
+    });
     console.log("home", filter);
   }
   
