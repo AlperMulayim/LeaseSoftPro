@@ -15,4 +15,8 @@ public class BuildingFilter {
     private Optional<Integer> beds;
     private Optional<Integer> baths;
     private Optional<String> city;
+    private Optional<Double> priceFrom;
+    private Optional<Double> priceTo;
+    private Optional<Double> sizeTo;
+    private Optional<Double> sizeFrom;
 }
