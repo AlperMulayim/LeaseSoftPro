@@ -1,8 +1,10 @@
 package com.alper.leasesoftprov2.leasesoft.buildings;
 
+import com.alper.leasesoftprov2.leasesoft.listing.BuildingListing;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +15,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 public class Building {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,4 +56,7 @@ public class Building {
     @Column(name = "address")
     private String address;
 
+    @OneToOne
+    @JoinColumn(name = "id")
+    private BuildingListing listing;
 }

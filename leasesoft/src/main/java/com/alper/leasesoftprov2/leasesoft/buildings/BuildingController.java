@@ -1,5 +1,7 @@
 package com.alper.leasesoftprov2.leasesoft.buildings;
 
+import com.alper.leasesoftprov2.leasesoft.buildings.mappers.dtos.BuildingDto;
+import jakarta.transaction.NotSupportedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +17,7 @@ public class BuildingController {
     public  BuildingService service;
 
     @GetMapping("") //add filter, error handling. add pagination
-    public List<Building> getAllBuildings(){
-        return this.service.getBuildings().stream().limit(16).collect(Collectors.toList());
+    public List<BuildingDto> getAllBuildings()  {
+        return this.service.getBuildings().stream().skip(500).limit(16).collect(Collectors.toList());
     }
 }

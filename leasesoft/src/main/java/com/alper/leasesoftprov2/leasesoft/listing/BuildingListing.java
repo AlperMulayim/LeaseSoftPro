@@ -24,10 +24,6 @@ public class BuildingListing {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne
-    @JoinColumn(name = "building_id")
-    private Building building;
-
     @Column(name = "listing_code")
     private String code;
 
@@ -54,6 +50,5 @@ public class BuildingListing {
 
     @Column(name = "update_date")
     private Date updateDate;
-
 
 }
