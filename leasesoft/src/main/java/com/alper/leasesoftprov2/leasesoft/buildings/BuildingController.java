@@ -16,7 +16,7 @@ public class BuildingController {
     @Autowired
     public  BuildingService service;
 
-    @GetMapping("") //add filter, error handling. add pagination
+    @PostMapping("") //add filter, error handling. add pagination
     public List<BuildingDto> getAllBuildings(@RequestBody BuildingFilter filter) {
         return this.service.getBuildings(filter);
     }
