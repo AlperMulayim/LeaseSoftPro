@@ -7,7 +7,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     .building-card-container {
         display: flex;
         flex: 8;
@@ -126,4 +125,17 @@
             }
         }
     }
+}
+
+.building-id{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    top: 60px;
+    left: 29px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #FFBB50;
 }
