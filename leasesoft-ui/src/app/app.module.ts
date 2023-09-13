@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BuildingsSectionComponent } from './buildings-section/buildings-section.component';
 import { BuildingCardComponent } from './building-card/building-card.component';
 import { MapLeasesoftComponent } from './map-leasesoft/map-leasesoft.component';
+import { BuildingFilterPanelComponent } from './filter-panels/building-filter-panel/building-filter-panel.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { MapLeasesoftComponent } from './map-leasesoft/map-leasesoft.component';
       FooterComponent,
       BuildingsSectionComponent,
       BuildingCardComponent,
-      MapLeasesoftComponent
+      MapLeasesoftComponent,
+      BuildingFilterPanelComponent
    ],
   imports: [
     BrowserModule,

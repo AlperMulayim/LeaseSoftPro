@@ -1,0 +1,178 @@
+.building-filter-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    flex: 5;
+    .header{
+        display: flex;
+        flex: 1;
+        font-family: Kufam;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        color: #FFBB50;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    .city {
+        display: flex;
+        flex: 1;
+        padding-top: 10px;
+
+        input {
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid #8E8E8E;
+            width: 100%;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            border: 2px solid #FFBB50;
+        }
+    }
+
+    .baths-and-beds {
+        display: flex;
+        flex: 1;
+
+        .beds {
+            display: flex;
+            flex: 1;
+
+            input {
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #8E8E8E;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            input[type=number]:focus {
+                border: 2px solid #FFBB50;
+            }
+        }
+
+        .baths {
+            display: flex;
+            flex: 1;
+
+            input {
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #8E8E8E;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            input[type=number]:focus {
+                border: 2px solid #FFBB50;
+            }
+
+        }
+    }
+
+    .price {
+        display: flex;
+        flex: 1;
+
+        .price-from {
+            display: flex;
+            flex: 1;
+
+            input {
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #8E8E8E;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            input[type=number]:focus {
+                border: 2px solid #FFBB50;
+            }
+        }
+
+        .price-to {
+            display: flex;
+            flex: 1;
+
+            input {
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #8E8E8E;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            input[type=number]:focus {
+                border: 2px solid #FFBB50;
+            }
+        }
+    }
+
+    .size {
+        display: flex;
+        flex: 1;
+
+        .size-from {
+            display: flex;
+            flex: 1;
+
+            input {
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #8E8E8E;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            input[type=number]:focus {
+                border: 2px solid #FFBB50;
+            }
+        }
+
+        .size-to {
+            display: flex;
+            flex: 1;
+
+            input {
+                height: 30px;
+                border-radius: 5px;
+                border: 1px solid #8E8E8E;
+                width: 100%;
+                box-sizing: border-box;
+                outline: none;
+            }
+
+            input[type=number]:focus {
+                border: 2px solid #FFBB50;
+            }
+
+        }
+    }
+    .search-button{
+        display: flex;
+        height: 40px;
+        background: #FFBB50;
+        justify-content: center;
+        align-items: center;
+        font-family: Kufam;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        color: white;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+}

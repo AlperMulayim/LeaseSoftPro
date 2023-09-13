@@ -1,11 +1,15 @@
-<p>
-  homepage works!
-</p>
-<div *ngIf="buildings"  class="buildings">
-  <app-buildings-section [buildingList]="buildings"></app-buildings-section>
+<div class="home-page-container">
+  <div class="buildings-section">
+    <div class="building-filter-panel">
+      <app-building-filter-panel></app-building-filter-panel>
+    </div>
+    <div class="buildings" *ngIf="buildings">
+      <app-buildings-section [buildingList]="buildings"></app-buildings-section>
+    </div>
+  </div>
+  <div class="home-map">
+    <div *ngIf="buildings" class="map">
+      <app-map-leasesoft [buildingList]="buildings"></app-map-leasesoft>
+    </div>
+  </div>
 </div>
-
-<div *ngIf="buildings" class="map">
-  <app-map-leasesoft [buildingList]="buildings"></app-map-leasesoft>
-</div>  
-

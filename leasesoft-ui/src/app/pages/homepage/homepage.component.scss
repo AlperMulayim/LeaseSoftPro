@@ -1,0 +1,30 @@
+.home-page-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    flex: 2;
+    .buildings-section{
+        display: flex;
+        flex-direction: row;
+        flex: 9;
+        margin-bottom: 20px;
+        .building-filter-panel{
+            display: flex;
+            flex: 2;
+            min-width: 300px;
+            background-color: #F5F1EF;
+            justify-content: center;
+            padding-top: 25px;
+            margin-right: 20px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .buildings{
+            display: flex;
+            flex: 7;
+        }
+    }
+    .hıme-map{
+        flex: 1;
+    }
+}
