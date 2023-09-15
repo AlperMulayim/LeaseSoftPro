@@ -30,4 +30,5 @@ public class BuildingDto {
     private BigDecimal lat;
     private BigDecimal lot;
     private String code;
+    private String features;
 }

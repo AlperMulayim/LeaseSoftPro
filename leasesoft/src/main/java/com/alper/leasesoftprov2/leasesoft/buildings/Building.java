@@ -1,5 +1,6 @@
 package com.alper.leasesoftprov2.leasesoft.buildings;
 
+import com.alper.leasesoftprov2.leasesoft.buildings.features.BuildingFeature;
 import com.alper.leasesoftprov2.leasesoft.listing.BuildingListing;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -9,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Entity
 @Table(name = "ldb_buildings")
@@ -59,4 +61,13 @@ public class Building {
     @OneToOne
     @JoinColumn(name = "id")
     private BuildingListing listing;
+
+    @ManyToMany
+    @JoinTable(
+            name = "ldb_building_features",
+            joinColumns = @JoinColumn(name = "building_id"),
+            inverseJoinColumns = @JoinColumn(name = "feature_id")
+    )
+    private List<BuildingFeature> features;
+
 }
