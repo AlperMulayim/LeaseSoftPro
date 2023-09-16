@@ -52,3 +52,17 @@ CREATE TABLE ldb_listings(
     update_date DATETIME,
     FOREIGN KEY(building_id) REFERENCES ldb_buildings(id)
 )
+
+
+CREATE TABLE ldb_features(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    feature_name VARCHAR(500)
+);
+
+CREATE TABLE ldb_building_features(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    feature_id INT,
+    building_id INT,
+    FOREIGN KEY(feature_id) REFERENCES ldb_features(id),
+    FOREIGN KEY(building_id) REFERENCES ldb_buildings(id)
+)
