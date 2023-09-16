@@ -3,6 +3,7 @@ package com.alper.leasesoftprov2.leasesoft.notifications;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.codec.ServerSentEvent;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,6 +14,7 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.stream.Stream;
 
+@CrossOrigin(value = { "http://localhost:4200" })
 @RestController
 @RequestMapping("api/v1/notifications")
 public class NotificationReactiveController {
