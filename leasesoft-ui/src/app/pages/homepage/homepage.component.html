@@ -1,3 +1,4 @@
+
 <div class="home-page-container">
   <div class="buildings-section">
     <div class="building-filter-panel">
@@ -8,6 +9,7 @@
     </div>
   </div>
   <div class="home-map">
+    {{notification | json}}
     <div *ngIf="buildings" class="map">
       <app-map-leasesoft [buildingList]="buildings"></app-map-leasesoft>
     </div>
