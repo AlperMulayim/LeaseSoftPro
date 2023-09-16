@@ -18,7 +18,6 @@ public class BuildingController {
     @Autowired
     public  BuildingService service;
 
-
     @Autowired
     @Qualifier("notification-publisher-rabbitmq")
     public INotificationPublisher notificationPublisher;

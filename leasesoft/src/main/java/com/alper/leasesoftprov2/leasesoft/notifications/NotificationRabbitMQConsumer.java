@@ -6,8 +6,15 @@ import org.springframework.stereotype.Component;
 
 @Component("notification-consumer-rabbitmq")
 public class NotificationRabbitMQConsumer {
+
+    private  LSNotificationDto notification = new LSNotificationDto();
+
     @RabbitListener(queues = {"notification_queue"})
     public void receive(@Payload LSNotificationDto notificationDto){
-        System.out.println("RECEİVED -> " + notificationDto.toString());
+        this.notification = notificationDto;
+    }
+
+    public LSNotificationDto getNotification(){
+        return this.notification;
     }
 }
